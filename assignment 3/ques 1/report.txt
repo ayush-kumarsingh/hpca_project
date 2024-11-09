@@ -1,0 +1,90 @@
+=================================================
+            Trace Event Information              
+=================================================
+  Total records                     :    1225872
+  Locked Load/Store Operations      :         22
+  Load Operations                   :     587733
+  Loads - uncacheable               :          0
+  Loads - IO                        :          0
+  Loads - Miss                      :          0
+  Loads - no mapping                :          0
+  Load Fill Buffer Hit              :      14902
+  Load L1D hit                      :     562481
+  Load L2D hit                      :          5
+  Load LLC hit                      :      10163
+  Load Local HITM                   :       6494
+  Load Remote HITM                  :          0
+  Load Remote HIT                   :          0
+  Load Local DRAM                   :        182
+  Load Remote DRAM                  :          0
+  Load MESI State Exclusive         :          0
+  Load MESI State Shared            :        182
+  Load LLC Misses                   :        182
+  Load access blocked by data       :          0
+  Load access blocked by address    :          0
+  LLC Misses to Local DRAM          :      100.0%
+  LLC Misses to Remote DRAM         :        0.0%
+  LLC Misses to Remote cache (HIT)  :        0.0%
+  LLC Misses to Remote cache (HITM) :        0.0%
+  Store Operations                  :          0
+  Store - uncacheable               :          0
+  Store - no mapping                :          0
+  Store L1D Hit                     :          0
+  Store L1D Miss                    :          0
+  No Page Map Rejects               :          8
+  Unable to parse data source       :     638139
+
+=================================================
+    Global Shared Cache Line Event Information   
+=================================================
+  Total Shared Cache Lines          :          8
+  Load HITs on shared lines         :      36084
+  Fill Buffer Hits on shared lines  :      14807
+  L1D hits on shared lines          :      11730
+  L2D hits on shared lines          :          0
+  LLC hits on shared lines          :       9547
+  Locked Access on shared lines     :          0
+  Blocked Access on shared lines    :          0
+  Store HITs on shared lines        :          0
+  Store L1D hits on shared lines    :          0
+  Total Merged records              :       6494
+
+=================================================
+                 c2c details                     
+=================================================
+  Events                            : cpu/mem-loads,ldlat=30/P
+                                    : cpu/mem-stores/P
+  Cachelines sort on                : Total HITMs
+  Cacheline data grouping           : offset,iaddr
+
+=================================================
+           Shared Data Cache Line Table          
+=================================================
+#
+#        ----------- Cacheline ----------      Tot  ------- Load Hitm -------    Total    Total    Total  ---- Stores ----  ----- Core Load Hit -----  - LLC Load Hit --  - RMT Load Hit --  --- Load Dram ----
+# Index             Address  Node  PA cnt     Hitm    Total  LclHitm  RmtHitm  records    Loads   Stores    L1Hit   L1Miss       FB       L1       L2    LclHit  LclHitm    RmtHit  RmtHitm       Lcl       Rmt
+# .....  ..................  ....  ......  .......  .......  .......  .......  .......  .......  .......  .......  .......  .......  .......  .......  ........  .......  ........  .......  ........  ........
+#
+      0      0x55620caf8140     0  191511   99.88%     6486     6486        0    36048    36048        0        0        0    14791    11729        0      3042     6486         0        0         0         0
+
+=================================================
+      Shared Cache Line Distribution Pareto      
+=================================================
+#
+# ----- HITM -----  -- Store Refs --  ------- CL --------                      ---------- cycles ----------    Total       cpu                             Shared                   
+# RmtHitm  LclHitm   L1 Hit  L1 Miss    Off  Node  PA cnt        Code address  rmt hitm  lcl hitm      load  records       cnt                     Symbol  Object  Source:Line  Node
+# .......  .......  .......  .......  .....  ....  ......  ..................  ........  ........  ........  .......  ........  .........................  ....  ...........  ....
+#
+  -------------------------------------------------------------
+      0        0     6486        0        0      0x55620caf8140
+  -------------------------------------------------------------
+    0.00%   19.15%    0.00%    0.00%   0x20     0       1      0x55620caf4fae         0       496       527     4241         2  [.] performant_thread_run  main  ??:0          0
+    0.00%    0.02%    0.00%    0.00%   0x20     0       1      0x55620caf5004         0       518       494       29         2  [.] performant_thread_run  main  ??:0          0
+    0.00%   25.70%    0.00%    0.00%   0x21     0       1      0x55620caf4fae         0       449       519     7315         2  [.] performant_thread_run  main  ??:0          0
+    0.00%   20.69%    0.00%    0.00%   0x22     0       1      0x55620caf4fae         0       494       507     4405         2  [.] performant_thread_run  main  ??:0          0
+    0.00%    0.02%    0.00%    0.00%   0x22     0       1      0x55620caf5004         0       668       380       29         2  [.] performant_thread_run  main  ??:0          0
+    0.00%    1.17%    0.00%    0.00%   0x23     0       1      0x55620caf4fae         0       477       270     1825         3  [.] performant_thread_run  main  ??:0          0
+    0.00%    0.02%    0.00%    0.00%   0x23     0       1      0x55620caf5004         0       393       147       16         3  [.] performant_thread_run  main  ??:0          0
+    0.00%   26.19%    0.00%    0.00%   0x24     0       1      0x55620caf4fae         0       455       506     7567         2  [.] performant_thread_run  main  ??:0          0
+    0.00%    6.97%    0.00%    0.00%   0x25     0       1      0x55620caf4fae         0       550       460    10511         2  [.] performant_thread_run  main  ??:0          0
+    0.00%    0.08%    0.00%    0.00%   0x25     0       1      0x55620caf5004         0       766       415       43         2  [.] performant_thread_run  main  ??:0          0
